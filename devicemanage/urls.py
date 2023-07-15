@@ -20,6 +20,8 @@ from rest_framework.routers import DefaultRouter  # 导入路由器定义的包
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('phone/<int:phone>', views.PhoneView.as_view()),
+
 ]
 
 # DRF框架的路由定义

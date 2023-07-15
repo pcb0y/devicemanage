@@ -25,8 +25,8 @@ class DeviceDetail(models.Model):
 class DeviceRepair(models.Model):
     """设备报修"""
     device_name = models.ForeignKey(to=DeviceDetail, on_delete=models.CASCADE, verbose_name="设备名")
-    report_repair_person = models.CharField(max_length=6,verbose_name="报修人")
-    repair_person = models.CharField(max_length=6, verbose_name="维修人")
+    report_repair_person = models.CharField(max_length=6, verbose_name="报修人")
+    repair_person = models.CharField(max_length=6, null=True, verbose_name="维修人")
     repair_time = models.DateTimeField(auto_now_add=True, verbose_name="维修时间")
     description_problem = models.CharField(max_length=200, verbose_name="故障描述")
     repair_status = models.BooleanField(default=False, verbose_name="修复状态")
